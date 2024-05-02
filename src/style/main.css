@@ -12,7 +12,7 @@ body {
 .visual, 
 .main, 
 .slogan, 
-.footer{
+.footer-inner{
   width:var(--containter-size, 940px);
   margin:0 auto;
 }
@@ -20,24 +20,35 @@ body {
 /* 헤더 */
 .header{
   background-color:yellow;
+  height:10vh;
   
 }
 
 /* 비주얼 */
 .visual{
   background-color:pink;
+  height:10vh;
   
 }
 
 /* main */
 .main{
   background-color:skyblue;
-  
+  height:60vh;
+  display:flex;
+  flex-flow:row / nowrap;/* flex-direction, flex-wrap 속성의 단축 속성 */
+  justify-content: flex-start; /*  메인축 */
+  align-items: stretch ; /* 교차축 */
+  /* 위에 flex-flow 에서 direction 를 어느 방향으로 했느냐에 따라서 메인축과 교차축이 바뀜 */
 }
 
+.group{
+  border:1px solid red;
+}
 /* slogan */
 .slogan{
   background-color:lime;
+  height:10vh;
   
 }
 
@@ -45,4 +56,9 @@ body {
 .footer{
   background-color:orange;
   
+}
+
+.footer-inner{
+  background-color:yellow;
+  height:10vh;
 }
