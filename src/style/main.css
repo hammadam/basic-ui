@@ -2,9 +2,38 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-    background-color: yellow;
 }
 
-h1{
-  font-family:inherit;
+/* 헤더 */
+.header{
+  background-color:yellow;
+  width:940px;
+}
+
+
+/* 비주얼 */
+.visual{
+  background-color:pink;
+  inline-size:940px;
+}
+
+
+
+/* main */
+.main{
+  background-color:skyblue;
+}
+
+
+
+/* slogan */
+.slogan{
+  background-color:lime;
+}
+
+
+
+/* footer */
+.footer{
+  background-color:orange;
 }
