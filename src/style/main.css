@@ -4,6 +4,7 @@
   --containter-size: 940px;
 }
 
+
 body {
     font-family: "Noto Sans KR", sans-serif;
 }
@@ -37,15 +38,29 @@ body {
   background-color:skyblue;
   height:60vh;
   display:flex;
-  flex-flow:row / nowrap;/* flex-direction, flex-wrap 속성의 단축 속성 */
-  justify-content: flex-start; /*  메인축 */
+  flex-flow:row nowrap;/* flex-direction, flex-wrap 속성의 단축 속성 */
+  justify-content: space-between; /*  메인축 */
   align-items: stretch ; /* 교차축 */
   /* 위에 flex-flow 에서 direction 를 어느 방향으로 했느냐에 따라서 메인축과 교차축이 바뀜 */
+  padding:28px 16px 36px; 
 }
 
 .group{
   border:1px solid red;
 }
+
+.group1{
+ width:250px;
+}
+
+.group2{
+  width:380px;
+ }
+
+ .group3{
+  width:190px;
+ }
+
 /* slogan */
 .slogan{
   background-color:lime;
