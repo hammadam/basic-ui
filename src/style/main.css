@@ -39,10 +39,15 @@ body {
   /* height:60vh; */
   display:flow-root;
   min-height:450px;
+  padding:15px;
+}
+.group-wrapper{
+  float:right;
 }
 
 .group{
   border:1px solid red;
+  margin:0 15px;
 }
 
 .group1{
