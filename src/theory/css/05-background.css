@@ -1,0 +1,51 @@
+.box{
+  width:500px;
+  height:300px;
+  inline-size:500px;
+  block-size:100px;
+  border:20px dashed blue;
+  padding:20px;
+  margin:50px;
+  background-color:pink;
+  background-image:url('./../../images/coffee.png');
+  background-repeat:no-repeat;
+  background-position:20% 30%;
+  background-size:110px 83px;
+  background-attachment: scroll;
+  background:pink url('./../../images/coffee.png') no-repeat 20% 30% /110px 83px scroll;
+}
+
+/* 상대경로와 절대경로 꼭 확인하기 */
+
+
+.container{
+  width:600px;
+  height:300px;
+  inline-size:600px;
+  block-size:300px;
+  border:1px solid red;
+  background-color:yellow;
+  background-image: url('./../../images/ani_flower_01.png'), url('./../../images/ani_flower_02.png');
+  /* 먼저 선언한 배경이 위로 올라옴, 나중에 선언한게 밑에 깔림. 마크업 순서 적용되는거랑 다르넹 */
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0, 100px 50px;
+  /* repeat, position 등도 멀티로 이동시킬 수 있음 */
+}
+
+.container2{
+  width:600px;
+  height:300px;
+  inline-size:600px;
+  block-size:300px;
+  border:1px solid red;
+  background-color:yellow;
+  background-image: url('./../../images/ani_flower_01.png'), url('./../../images/ani_flower_02.png');
+  /* 먼저 선언한 배경이 위로 올라옴, 나중에 선언한게 밑에 깔림. 마크업 순서 적용되는거랑 다르넹 */
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0, 100px 50px;
+  /* repeat, position 등도 멀티로 이동시킬 수 있음 */
+  background:url('./../../images/ani_flower_01.png') no-repeat 0 0,
+             url('./../../images/ani_flower_02.png') no-repeat 100px 50px,
+             yellow;
+             /* 멀티로 쓸 때는 배경 컬러를 맨 마지막에 적어야 함. 멀티로 쓸 때 먼저 선언한게 맨 위로 올라가기 때문에 선언순서상 배경컬러는 마지막에 써야 함 */
+}

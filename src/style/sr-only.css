@@ -1,0 +1,20 @@
+/* sr-only : 스크린리더 온리라는 이름으로 많이들 쓴다고 함 */
+.sr-only{
+  background:red;
+  position:absolute;
+  clip:rect(0,0,0,);
+  /* 
+  top:-9999px;
+  inset-block-start:-9999px
+  inline-size:1px;
+  block-size:1px;
+  */
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  margin:-1px;
+  clip-path:polygon(0 0, 0 0, 0 0);
+  padding:0;
+  white-space: nowrap;
+  border-width:0;
+}
