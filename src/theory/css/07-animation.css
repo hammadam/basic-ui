@@ -1,0 +1,37 @@
+@keyframes size{
+  0%{
+    width:0;
+    inline-size:0;
+  }
+  100%{
+    width:100%;
+    inline-size:100%;
+  }
+}
+
+.box{
+  background:yellow;
+  width:0;
+  inline-size:0;
+  overflow: hidden;
+  /*
+
+  animation-name: size;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-play-state: paused; 일시정지! 애니메이션 구동하지마
+  animation-direction:alternate;  한번은 순방향으로 한번은 역방향으로
+  animation-iteration-count: 2;
+  */
+  animation: size 5s 1s forwards ease-in-out running alternate 2;
+  /* name duration(필수) delay(옵션, 없어도 됨) fill-mode timing-function play-state direction iteration-count */
+}
+
+/* 애니메이션을 보기 불편한 사람은 아래 프리퍼 리듀스 모션? 이걸 키면 */
+@media (prefers-reduced-motion: reduce) {
+  .box{
+    animation:none;
+  }
+}

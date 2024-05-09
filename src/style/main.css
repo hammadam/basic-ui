@@ -1,12 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url(./theme.css);
 
 :root{
   --containter-size: 940px;
+  --primary:var(--orange-200, #ED552F);
+  --secondary:var(--orange-100, #E8852E);
 }
 
+/* 기본 박스 사이징 설정 */
+*, *::before, *::after{
+  box-sizing:border-box;
+}
 
+/* 그라디언트 배경 */
 body {
-    font-family: "Noto Sans KR", sans-serif;
+  margin:0;
+  font-family: "SUIT Variable", sans-serif;
+  line-height:1.15;
+  background-color:#ccc;
+  background-image:url(./../images/bg_flower.png), linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);   
+  /* 그라디언트보다 배경 이미지가 먼저 선언해야 됨 */
+  /* linear-gradient(red, green);  */
+  /* linear-gradient(45deg);  */
+  /* linear-gradient(to right);  */
+  /* linear-gradient(to bottom);  */
+  background-repeat:no-repeat;
+  background-position: 50% 0, 0 0;
+  /* background:url(./../images/bg_flower.png), #ccc linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%); */
 }
 
 .header, 
@@ -20,30 +39,137 @@ body {
 
 /* 헤더 */
 .header{
-  background-color:rgb(128, 88, 50);
+  background-color:var(--primary);
   height:120px;
-  padding:0 50px;
+  padding:0 28px;
   border-radius:0 0 15px 15px;
   position:relative;
 }
+
 /* 로고 */
 .logo{
-  background:orange;
+  /* background:orange; */
   position:absolute;
   top:45px;
   left:60px;
+  margin:0;
+  font-size:1em;
+
+  a, img{
+    /* vertical-align:top; */
+    display:block;
+  }
 }
+
+/* 텍스트 링크 모음 */
+.member-service {
+  --spacing:8px;
+  font-size: 0;
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin: 0;
+  text-align: right;
+  translate:var(--spacing, 8px) 0;
+  
+  li {
+    display: inline-block;
+    margin: 0;
+    font-size:0.875rem;
+    
+    a {
+      display: inherit;
+      padding: 8px var(--spacing,8px) 8px 4px;
+      font-variant: small-caps;
+      margin: 0;
+      text-transform: uppercase;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
 
 /* 비주얼 */
-.visual{
-  background-color:pink;
-  height:10vh;
-  
+@keyframes moveEffect{
+  0%{
+    font-size:12px;
+    /* top:0;
+    inset-block-start: 0;
+    left:0;
+    inset-inline-start: 0; */
+    /* transform:translate(0,0); */
+    translate:0 0;
+    
+  }
+  100%{
+    font-size:24px;
+    /* top:75px;
+    inset-block-start: 75px;
+    left:400px;
+    inset-inline-start: 400px; */
+    /* transform:translate(300px,75px); */
+    translate:300px 75px;
+  }
+}
+/* 1~4번까지의 꽃이 서서히 사라졌다가 나타났다가 사라졌다가 무한반복 */
+@keyframes fadeEffect{
+  0%{
+    opacity:1;
+  }
+  50%{
+    opacity:0;
+  }
+  100%{
+    opacity:0;
+  }
 }
 
+
+.visual{
+  /* background-color:pink; */
+  height:120px;
+  block-size:120px;
+  position:relative;
+}
+
+.visual::before, .visual::after{
+  content:"";
+  position:absolute; /* position, float 속성을 지정하면 inline 이었던 요소가 block 요소처럼 변함, display:block을 안해도 됨 */
+  top:0;
+  left:0;
+  width:inherit;
+  height:100%;
+  inline-size:inherit;
+  block-size:inherit;
+  background-repeat:no-repeat;
+  animation-name: fadeEffect;
+  animation-duration: 4s;
+  animation-iteration-count:infinite ;
+  animation-direction: alternate; /* 이거는 키프레임에서 중간에 50%과정 없이 0%:opacity:1 / 100%:opacity:0 이렇게 넣어도 중간과정을 알아서 스무스하게 넣어줌 */
+}
+.visual::before{
+  /* z-index:1; */
+  background-image: url(./../images/ani_flower_01.png), url(./../images/ani_flower_02.png);
+  background-position:0 -10px , 600px 10px;
+}
+.visual::after{
+  background-image: url(./../images/ani_flower_03.png), url(./../images/ani_flower_04.png);
+  background-position:300px 0 , 800px 0;
+  animation-delay: 2s;
+}
+
+.visual-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name: moveEffect;
+  animation-duration:5s;
+  animation-fill-mode: forwards;
+  position:relative;
+  z-index:1;
+  display: inline-block;
+}
 /* main */
 .main{
-  background-color:skyblue;
+  background-color:#fff;
   /* height:60vh; */
   display:flow-root;
   min-height:450px;
@@ -75,19 +201,19 @@ body {
 
 /* slogan */
 .slogan{
-  background-color:rgb(160, 235, 160);
+  /* background-color:rgb(160, 235, 160); */
   height:10vh;
   
 }
 
 /* footer */
 .footer{
-  background-color:orange;
+  /* background-color:orange; */
   
 }
 
 .footer-inner{
-  background-color:yellow;
+  /* background-color:yellow; */
   height:10vh;
 }
 
