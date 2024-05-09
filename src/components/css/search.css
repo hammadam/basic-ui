@@ -1,0 +1,96 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+/* input 컴포넌트 */
+.form-input{
+  --spacing: 10px;
+  --border-color: var(--gray-500);
+  --radius: 3px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--spacing);
+  align-items:center;
+  border-bottom:1px solid transparent;
+
+  label{
+    white-space: nowrap;
+  }
+
+  input{
+    flex-grow: 1;
+    /* border: 1px solid var(--border-color); */
+    border:0;
+    border-radius: var(--radius);
+    padding: 1px 1px 1px 8px;
+    height: 24px;
+    block-size: 24px;
+    width: 100%;
+  }
+
+  input:focus{
+    outline:0;
+  }
+
+  &:focus-within{
+    border-bottom-color:red;
+  }
+}
+
+
+
+/* button 컴포넌트 */
+.button{
+  --bg-color:var(--orange-200);
+  --color: var(--white);
+  --radius: 3px;
+
+  border: 0;
+  padding: 16px 10px;
+  background-color: var(--bg-color);
+  color: var(--color);
+  border-radius: var(--radius);
+  white-space: nowrap;
+
+  &:focus{
+    outline: 0;
+  }
+  &:focus-visible{
+    outline:2px solid green;
+  }
+  &.search-button{
+    background-color:#000;
+    padding: 0 10px;
+  }
+}
+
+
+/* 검색 폼 레이아웃 스타일링 */
+
+.search{
+}
+.search-group{
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: space-between;
+  background-image:linear-gradient(#ccc, var(--white, #fff) );
+  border:1px solid #aaa;
+  border-bottom-color:#fff;
+  border-radius:5px 5px 0 0;
+  padding:12px 24px 8px;
+
+  .form-input{
+    flex-grow:1;
+  }
+
+  [class*="fab"]{
+    padding-right:0.25em;
+    padding-inline-end:0.25em;
+  }
+
+  input, button{
+    height:30px;
+    block-size:30px;
+  }
+}
