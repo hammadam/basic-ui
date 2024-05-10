@@ -1,0 +1,85 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+body{
+  margin:50px;
+}
+
+.form-checkbox{
+  position:relative;
+
+  input[type="checkbox"]{
+    /* display:none; */
+    position:absolute;
+    appearance: none;
+    /* appearance: none; 이 친구를 넣으면 체크박스가 안 보이게 됨 */
+    width:12px;
+    inline-size:12px;
+    height:12px;
+    block-size:12px;
+  }
+
+  label{
+    /* position:absolute;
+    top:0;
+    left:1px; */
+    background:url(/components/images/un-check.svg) no-repeat 0 0 /contain;
+    padding-left:22px;
+  }
+
+  input[type="checkbox"]:checked +label{
+    background-image:url(/components/images/checked.svg);
+  }
+
+  input:focus{
+    outline:0;
+  }
+  input:focus-visible{
+    outline:2px solid green;
+    /* outline-offset:4px;  */
+    /* 
+    마우스로 포커스 되었을 때와 키보드로 포커스 되었을 때 
+    아웃라인 offset 사이즈의 기본값이 다르게 되어있는듯 함
+    키보드 탭으로 포커스 되었을 때가 조금 더 큼.
+    선생님이 파이어폭스로 확인해보니 파이어폭스에서는 크기 차이가 없었음.
+    에이전트 스타일 상 크롬은 조금더 크게 보여주고 있는 것 같고
+    파이어폭스에서는 outline-offset을 0값으로 보여주는 것 같음
+    */
+  }
+}
+
+
+.tooltip{
+  margin-top:50px;
+
+  .tooltip-icon{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items:center;
+    background-color: #fff;
+    width:20px;
+    inline-size:20px;
+    height:20px;
+    block-size:20px;
+    padding:0.25em;
+    font-size:10px;
+    color:#aaa;
+    border:1px solid #aaa;
+    border-radius:50%;
+
+    &:hover + .tooltip-content, &:focus + .tooltip-content{
+      display:block;
+    }
+  }
+
+  .tooltip-content{
+    display:none;
+    padding:10px;
+    color:#fff;
+    width:300px;
+    inline-size:300px;
+    background:rgba(0,0,0,0.6);
+  }
+}
