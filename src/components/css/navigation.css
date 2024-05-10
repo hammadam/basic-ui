@@ -1,0 +1,97 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+body{
+  margin:50px;
+}
+
+.menu{
+  background:orangered linear-gradient(to bottom, var(--orange-100), var(--orange-200), var(--orange-100));
+  box-shadow:0 -2px 0 0 #181818;
+  display:flow-root;
+  padding-left:225px;
+  padding-inline-start: 225px;
+
+  &::after{
+    content:'';
+    display:block;
+    clear:both;
+  }
+
+  > li{
+    float:left;
+    position:relative;
+    border-left:1px solid var(--white);
+  }
+
+  > li:nth-child(-n+3) > ul{
+    left:0;
+  }
+  > li:nth-child(n+4) > ul{
+    right:0;
+  }
+
+  > li.is--active{
+    button{
+      color:var(--yellow);
+    }
+
+    button span{
+      /* border-bottom:2px solid #000; */
+      &::after{
+        content:'';
+        display:block;
+        border-top:2px solid #000;
+      }
+    }
+
+    ul{
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content: flex-start;
+    }
+  }
+
+  button{
+    font-size:1.4rem;
+    font-weight:700;
+    padding:0 24px;
+    height:60px;
+    block-size:60px;
+    line-height:60px;
+    border:0;
+    background-color:transparent;
+    color:#fff;
+    text-shadow: 1px 1px 0 #000 , -1px -1px 0 #000;
+
+    span{
+      display:block;
+      /* padding:0 24px; */
+    }
+  }
+/* 
+  button[aria-expanded="true"]{
+    color:lime;
+  }
+
+  button[aria-expanded="true"] + ul{
+    display:block;
+  } */
+
+  ul{
+    display:none;
+    position:absolute;
+    top:65px;
+    
+    li{
+      white-space: nowrap;
+      padding:8px;
+    }
+
+    a{
+      display:flex;
+      gap:8px;
+    }
+  }
+}
