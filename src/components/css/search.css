@@ -67,9 +67,6 @@
 
 
 /* 검색 폼 레이아웃 스타일링 */
-
-.search{
-}
 .search-group{
   display:flex;
   flex-flow:row nowrap;
