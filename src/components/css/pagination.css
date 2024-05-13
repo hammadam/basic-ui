@@ -1,3 +1,54 @@
 @import url(/style/reset.css);
 @import url(/style/theme.css);
 @import url(/style/base.css);
+
+body{
+  margin:0;
+  padding:60px 0 0;
+}
+h1{
+  margin-bottom:30px;
+}
+
+*:focus, .button:focus{
+  outline:0;
+  outline-offset:5px;
+}
+*:focus-visible, .button:focus-visible{
+  outline:3px solid var(--dark-blue);
+}
+
+.pagination{
+  padding:0 1.875rem;
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.5rem;
+  color:var(--light-blue);
+}
+
+.button{
+  flex: 0 0 30px;
+  width:1.875rem;
+  inline-size:1.875rem;
+  height:1.875rem;
+  block-size:1.875rem;
+  color:inherit;
+  background:0;
+  border:1px solid var(--light-blue);
+  border-radius:50%;
+}
+
+.pagination > div{
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: space-around;
+  flex:1 1 0;
+  column-gap: 0.5rem;
+
+  .is-selected{
+    font-weight:bold;
+    color:var(--dark-blue);
+  }
+}

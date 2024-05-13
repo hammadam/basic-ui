@@ -10,6 +10,33 @@
   </head>
   <body>
     <h1>페이지네이션</h1>
-  
+    <!-- 시멘틱 요소 -->
+    <!-- <nav class="pagination" aria-label="페이지네이션">
+      <button type="button" aria-label="이전 페이지"><span class="fas fa-angle-left" aria-hidden="true"></span></button>
+      <ol role="none">
+        <li><a href="/">1</a></li>
+        <li><a href="/">2</a></li>
+        <li><a href="/" class="is-selected" aria-current="page">3</a></li>
+        <li><a href="/">4</a></li>
+        <li><a href="/">5</a></li>
+      </ol>
+      <button type="button" aria-label="다음 페이지"><span class="fas fa-angle-right" aria-hidden="true"></span></button>
+    </nav> -->
+
+    <!-- div 요소 -->
+    <div class="pagination" role="navigation" aria-label="페이지네이션">
+      <button class="button button-prev" type="button" aria-label="이전 페이지"><span class="fas fa-angle-left" aria-hidden="true"></span></button>
+      <div>
+        <a href="/">1</a>
+        <a href="/">2</a>
+        <a href="/" class="is-selected" aria-current="page">3</a>
+        <a href="/">4</a>
+        <a href="/">5</a>
+      </div>
+      <button class="button button-next" type="button" aria-label="다음 페이지"><span class="fas fa-angle-right" aria-hidden="true"></span></button>
+    </div>
+
+    <!-- 코파일럿 ai가 짜준 스크립트로 페이지네이션을 클릭하면 클래스명 remove, add 되는 스크립트 -->
+    <script src="/components/js/pagination.js"> </script>
   </body>
 </html>
