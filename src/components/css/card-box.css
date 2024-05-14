@@ -1,0 +1,52 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+@import url(/components/css/card.css);
+
+h1{
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.container{
+  display: grid;
+  padding: 30px;
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px){
+  .container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* @media (min-width: 1025px){
+  .container{
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} */
+
+/* @media (min-width: 1025px) {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+} */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 이렇게 하면 꽉 차게 해서 배치 됨 */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 이렇게하면 오른쪽에 남는 공간에 여백이 남고 */
+  }
+}

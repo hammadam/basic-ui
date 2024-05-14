@@ -1,0 +1,137 @@
+@import url(default.css);
+
+body{
+  margin:50px;
+}
+
+.container{
+  border:10px solid #000;
+  display:grid;
+  /* grid-template-columns: 100px 100px 100px 100px; */
+  grid-template-columns: repeat(4,1fr);
+  /* grid-auto-columns: minmax(50px, 1fr); */
+  /* repeat(몇개, 어떤 사이즈로) */
+  /* grid-template-rows: 50px; */
+  /* grid-template-rows: repeat(10, 50px); */
+  grid-auto-rows: minmax(50px, auto);
+  /* grid-auto-rows: 50px; */
+  grid-auto-flow:dense;
+  gap:20px;
+  grid-template-areas: 
+  "cell-1 cell-1 cell-2 cell-3"
+  "cell-1 cell-1 cell-2 cell-3"
+  ". . cell-4 cell-4";
+}
+
+.grid-cell1{
+  grid-area:cell-1;
+}
+.grid-cell2{
+  grid-area:cell-2;
+}
+.grid-cell3{
+  grid-area:cell-3;
+}
+.grid-cell4{
+  grid-area:cell-4;
+}
+
+
+  .container div:nth-child(odd){
+    /* 홀수 애기들만 적용 */
+    /* grid-column: span 2; */
+    /* 홀수 애들은 4칸 합쳐 */
+  }
+
+  .container div:nth-child(even){
+    /* 짝수 애기들만 적용 */
+    /* grid-row: span 2; */
+    /* 짝수 애들은 3칸 합쳐 */
+  }
+
+
+/* .grid-cell1{
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-row-end: 5;
+  grid-column-end: 4;
+} */
+
+
+/* .grid-cell2{
+  grid-row-start: 8;
+  grid-column-start: 5;
+  grid-row-end: 11;
+  grid-column-end: 6;
+} */
+/* 위의 코드를 아래 방식으로 단축 표기 가능!!! */
+/* .grid-cell2{
+  grid-row:8/11;
+  grid-column:5/6;
+} */
+
+
+
+/* .grid-cell3{
+  grid-row:7/9;
+  grid-column:2/4;
+} */
+/* 이 단축표기법을 더욱 더 편하게 단축하려면!!! */
+/* .grid-cell3{
+  grid-area:7/2/9/4;
+} */
+
+
+/* .grid-cell4{
+  grid-column:span 2;
+  grid-row:span 2;
+} */
+
+/* .grid-cell5{
+  grid-row:6/7;
+  grid-column:1/-1;
+} */
+/* (뒤에 숫자가 작으면 앞으로 합쳐지게 됨) */
+
+
+
+.container3{
+  border: 10px solid blue;
+  margin: 0 auto;
+  width: 500px;
+  display: grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:minmax(50px,auto);
+  grid-auto-flow:dense;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+
+  .grid-cell1{
+    grid-row-start: 3;
+    grid-column-start: 2;
+    grid-row-end: 5;
+    grid-column-end: 4;
+  }
+  .grid-cell7{
+    justify-self: end;
+    align-self: end;
+    /* self : 나만 정렬되는거 */
+  }
+
+}
+
+
+
+
+.container3 div:nth-child(odd){
+  /* 홀수 애기들만 적용 */
+  grid-column: span 2;
+  /* 홀수 애들은 4칸 합쳐 */
+}
+
+.container3 div:nth-child(even){
+  /* 짝수 애기들만 적용 */
+  grid-row: span 2;
+  /* 짝수 애들은 3칸 합쳐 */
+}
